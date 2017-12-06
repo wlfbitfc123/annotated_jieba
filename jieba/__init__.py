@@ -75,8 +75,8 @@ class Tokenizer(object):
         lfreq = {} # 字典存储  词条:出现次数
         ltotal = 0 # 所有词条的总的出现次数
         with open(f_name, 'rb') as f: # 打开文件 dict.txt 
-            for lineno, line in enumerate(f, 1): # 行号,行
-                try:
+            for lineno, line in enumerate(f, 1): # 行号,行，emumerate:遍历
+                try: #异常处理
                     line = line.strip().decode('utf-8') # 解码为Unicode
                     word, freq = line.split(' ')[:2] # 获得词条 及其出现次数
                     freq = int(freq)
